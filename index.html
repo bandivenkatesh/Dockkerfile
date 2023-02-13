@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery Store</title>
+    <style>
+      /* Add some styling for the UI */
+      .container {
+        width: 400px;
+        margin: 50px auto;
+        text-align: center;
+      }
+      .header {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .form-control {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        width: 100%;
+      }
+      .btn {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+      .groceries {
+        margin-top: 20px;
+      }
+      .grocery {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Grocery List</h2>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        id="item"
+        placeholder="Add an item"
+      />
+      <button class="btn" id="add">Add</button>
+      <div class="groceries">
+        <!-- The grocery items will be added here -->
+      </div>
+    </div>
+
+    <!-- Add JavaScript to handle the functionality -->
+    <script>
+      const itemInput = document.getElementById("item");
+      const addButton = document.getElementById("add");
+      const groceryList = document.querySelector(".groceries");
+
+      addButton.addEventListener("click", () => {
+        const item = itemInput.value;
+        const grocery = document.createElement("div");
+        grocery.classList.add("grocery");
+        grocery.innerText = item;
+        groceryList.appendChild(grocery);
+        itemInput.value = "";
+      });
+    </script>
+  </body>
+</html>
